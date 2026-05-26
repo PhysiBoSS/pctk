@@ -94,7 +94,7 @@ class MultiCellDS(object):
         for child in childs:
             if child.tag != "simplified_data":
                 continue
-            if child.attrib["source"] == "PhysiCell":
+            if child.attrib["source"] in ("PhysiCell", "BioFVM"):
                 return child
     
         return self._get_cell_info_recursive(childs[0])
